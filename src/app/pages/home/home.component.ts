@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MyModalComponent } from '../../my-modal/my-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(public dialog: MatDialog) {}
 
-}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MyModalComponent, {
+      width: '250px',
+      data: { name: 'Angular Modal' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }}

@@ -3,7 +3,9 @@
 
 html, body { height: 100%; }
 body { background-color: #A793F0; 
-    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow: hidden;
+}
 .text-center{
     text-align:center;
 }
