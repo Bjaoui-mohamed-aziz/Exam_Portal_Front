@@ -2,7 +2,7 @@
 
 
 html, body { height: 100%; }
-body { background-color: rgb(230, 230, 230); 
+body { background-color: #A793F0; 
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-center{
     text-align:center;
@@ -11,9 +11,16 @@ body { background-color: rgb(230, 230, 230);
 .ml20{
     margin-left: 30px !important ;
 }
+.ml30{
+    margin-left: 40px !important ;
+}
 .mr20{
     margin-right: 50px !important ;
 }
+.custom-text-color {
+    color: white;
+  }
+  
 .mt20{
     margin-top: 20px !important ;
 }
@@ -37,8 +44,9 @@ body { background-color: rgb(230, 230, 230);
 .mb20{
     margin-bottom: 20px !important ;
 }
+
 .color{
-    color: grey;
+    color: #000;
 }
 
 html, body { height: 100%; }

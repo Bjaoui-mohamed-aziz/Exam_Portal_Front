@@ -1,0 +1,42 @@
+#banner {
+    background-image: linear-gradient(to right, #5a31ff, #342085);
+    padding-top: 12%;
+    color: #fff;
+    padding-bottom: 60px;
+    display: flex;
+}
+
+.title{
+    color:white;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px; 
+    margin-left: 40px;  
+}
+
+
+
+.play_btn_container {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+#play_btn {
+    width: 70px;
+    height: 70px;
+}
+
+.play_btn_text {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 40px;
+}
+
+.quiz_img{
+    width: 330px;
+    height: 330px;
+    
+}

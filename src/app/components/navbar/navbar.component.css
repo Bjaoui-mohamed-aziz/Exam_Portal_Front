@@ -1,3 +1,17 @@
 .espace {
   flex: 1 1 auto;
 }
+
+.custom-bg-color {
+  background-color: #5a31ff;
+  box-shadow: initial 0 0 0 1000px rgb(0, 0, 0);
+}
+
+.custom-text-color {
+  color: white;
+}
+
+.six {
+  width: 45px;
+  height: 45px;
+}

@@ -1,12 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="custom-bg-color">
     <a 
     [routerLink]="'/home'"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  >
      
      
-        <mat-icon>menu_book</mat-icon>
+     
+          <img src="../../../assets/quizz.png" class="six mt10 ml10 mb10"> 
     </a>
-   <span>Exam portal</span>
+   <span class="custom-text-color ml10 lead">QUEEZ</span>
    <span class="espace"></span>
    
    <a
@@ -14,9 +15,9 @@
    [routerLink]="'/login'"
    mat-icon-button 
    style="margin-right: 30px;"
-   class="example-icon favorite-icon" 
+   class="example-icon favorite-icon custom-text-color text-uppercase lead" 
    aria-label="Example icon-button with heart icon">
-    Login 
+    Login
 </a>
 
 
@@ -24,10 +25,10 @@
 *ngIf="!isLoggedIn"
 [routerLink]="'/signup'"
 mat-icon-button 
-style="margin-right: 50px;"
-class="example-icon favorite-icon" 
+style="margin-right: 100px;"
+class="example-icon favorite-icon custom-text-color text-uppercase lead" 
 aria-label="Example icon-button with heart icon">
- register 
+| register 
 </a>
 
 
@@ -36,7 +37,7 @@ aria-label="Example icon-button with heart icon">
 
 *ngIf="isLoggedIn"
  mat-icon-button 
-class="example-icon favorite-icon mr20 ml20" 
+class="example-icon favorite-icon mr20 ml20 custom-text-color text-uppercase" 
 aria-label="Example icon-button with heart icon">
  
 logout
@@ -45,7 +46,7 @@ logout
 <button
 *ngIf="login.isLoggedIn && user"
  mat-icon-button 
-class="example-icon favorite-icon mr20 ml20" 
+class="example-icon favorite-icon mr20 ml20  custom-text-color" 
 aria-label="Example icon-button with heart icon">
  
 {{  user.username  }}

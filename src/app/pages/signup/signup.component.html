@@ -2,10 +2,10 @@
     
     <div class="container text-center">
         <div class="grid ">
-<mat-card class="dim">
+              <mat-card class="dim">
             <div class="col-md-6 offset-md-3"> 
                 <div class="container text-center">
-                    <img src="../../../assets/signup.png" alt="" width="80" height="80"> 
+                    <img src="../../../assets/signup.png" alt="" width="60" height="60"> 
 
                 </div>
                   
@@ -23,9 +23,10 @@
                           placeholder="Enter Here">   
                       </mat-form-field><br>
 
-                      <mat-form-field class="full-width" appearance="outline">
+                      <mat-form-field class="full-width " appearance="outline">
                         <mat-label>password</mat-label>
                         <input 
+                        class="custom-rounded"
                         required
                         [(ngModel)]="user.password"
                           name="password"

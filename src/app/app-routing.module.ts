@@ -32,11 +32,12 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch: 'full',
   },
-  {
-    path: 'home',
-    component: HomeComponent,
-    pathMatch: 'full',
-  },
+  { path: '', 
+    redirectTo: '/home', 
+    pathMatch: 'full' },
+  { 
+    path: 'home', 
+    component: HomeComponent },
   {
     path: 'admin',
     component: DashboardComponent,
