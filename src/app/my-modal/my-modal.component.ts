@@ -3,21 +3,17 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-my-modal',
-  template: `
-    <h2 mat-dialog-title>Modal Title</h2>
-    <mat-dialog-content>
-      <p>This is the content of the modal.</p>
-    </mat-dialog-content>
-    <mat-dialog-actions>
-      <button mat-button (click)="close()">Close</button>
-    </mat-dialog-actions>
-  `
+  templateUrl: './my-modal.component.html',
+  styleUrls: ['./my-modal.component.css']
 })
 export class MyModalComponent {
-  constructor(public dialogRef: MatDialogRef<MyModalComponent>) {}
+  constructor(public dialogRef: MatDialogRef<MyModalComponent>) {
+    dialogRef.updateSize('400px', '520px'); 
+    
+
+  }
 
   close(): void {
-    this.dialogRef.close();  // This will close the modal
+    this.dialogRef.close();
   }
 } 
-

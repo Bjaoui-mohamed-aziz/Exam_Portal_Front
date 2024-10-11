@@ -12,8 +12,9 @@ export class HomeComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(MyModalComponent, {
-      width: '250px',
-      data: { name: 'Angular Modal' }
+      width: '500px',
+      data: { name: 'Angular Modal' },
+
     });
 
     dialogRef.afterClosed().subscribe(result => {

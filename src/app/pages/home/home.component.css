@@ -43,6 +43,10 @@ button{
     font-weight: 400;
     margin-left: 40px;
 }
+.custom-dialog-container .mat-dialog-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+  }
+  
 
 .quiz_img{
     width: 330px;
