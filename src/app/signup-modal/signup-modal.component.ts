@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class SignupModalComponent {
 
   constructor(public dialogRef: MatDialogRef<SignupModalComponent>) {
-    dialogRef.updateSize('400px', '500px'); 
+    dialogRef.updateSize('800px', '585px'); 
     
 
   }

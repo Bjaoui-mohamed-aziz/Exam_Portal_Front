@@ -20,6 +20,9 @@ form{
     font-weight: bold;
     cursor: pointer;
 }
+#pass{
+    color: rgb(156, 8, 8);
+}
 
 .close-btn:hover {
     color: #ff2828;  /* Change color on hover */
