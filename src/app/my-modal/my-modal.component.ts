@@ -8,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class MyModalComponent {
   constructor(public dialogRef: MatDialogRef<MyModalComponent>) {
-    dialogRef.updateSize('400px', '520px'); 
+    dialogRef.updateSize('400px', '500px'); 
     
 
   }
@@ -16,4 +16,4 @@ export class MyModalComponent {
   close(): void {
     this.dialogRef.close();
   }
-} 
+}
