@@ -22,7 +22,7 @@ if(this.login.isLoggedIn() && this.login.getUserRole()=='ADMIN')
 
       return true }
     
-      this.router.navigate(['login']);
+      this.router.navigate(['/home']);
 return false;
 
     }
