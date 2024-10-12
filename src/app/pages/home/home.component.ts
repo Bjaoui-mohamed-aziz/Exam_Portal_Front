@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MyModalComponent } from '../../my-modal/my-modal.component';
+import { MyModalComponent } from '../../login-modal/login-modal.component';
+import { SignupComponent } from '../signup/signup.component';
+import { SignupModalComponent } from 'src/app/signup-modal/signup-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ export class HomeComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(MyModalComponent, {
+    const dialogRef = this.dialog.open(SignupModalComponent, {
       width: '500px',
       data: { name: 'Angular Modal' },
 

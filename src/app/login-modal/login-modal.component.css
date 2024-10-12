@@ -5,6 +5,28 @@ form{
     background-color: #f9f9f9;
 }
 
+.close-btn {
+    position: absolute;
+    border-radius: 20%; 
+    padding: 1%;
+    padding-left: 7px;
+    padding-right: 7px;
+    top: 5px;  /* Position the button near the top */
+    right: 5px; /* Position the button near the left */
+    background: transparent;
+    color: #be0000;  /* Change color on hover */
+    border: 1px solid #be0000;
+    font-size: 24px;  /* Make the "X" bigger */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff2828;  /* Change color on hover */
+    border: 1px solid #ff2828;
+
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -94,10 +116,11 @@ form{
 }
 .text-register{
 color: black;
+cursor: pointer;
 justify-content: center;
 align-items: center;
 margin-left: 40px;
-font-weight: 400;
+font-weight: 500;
 }
 
 

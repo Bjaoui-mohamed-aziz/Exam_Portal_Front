@@ -42,7 +42,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyModalComponent } from './my-modal/my-modal.component';
+import { MyModalComponent } from './login-modal/login-modal.component';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { MyModalComponent } from './my-modal/my-modal.component';
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
-    MyModalComponent
+    MyModalComponent,
+    SignupModalComponent
     
   ],
   imports: [

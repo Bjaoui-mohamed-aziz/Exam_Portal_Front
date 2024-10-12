@@ -3,8 +3,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-my-modal',
-  templateUrl: './my-modal.component.html',
-  styleUrls: ['./my-modal.component.css']
+  templateUrl: './login-modal.component.html',
+  styleUrls: ['./login-modal.component.css']
 })
 export class MyModalComponent {
   constructor(public dialogRef: MatDialogRef<MyModalComponent>) {
