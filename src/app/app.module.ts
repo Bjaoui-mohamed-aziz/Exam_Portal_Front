@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import {MatButtonModule, MatIconButton} from '@angular/material/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
@@ -49,7 +48,6 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    SignupComponent,
     HomeComponent,
     UserdComponent,
     DashboardComponent,

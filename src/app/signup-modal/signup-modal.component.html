@@ -1,4 +1,4 @@
-<form class="custom-modal">
+<form class="custom-modal"  (ngSubmit)="formSubmit()">
   <button type="button" class="close-btn" (click)="close()">&times;</button>
   
   <img src="../../../assets/signup.png" alt="logo" class="signin d-block mx-auto">
@@ -7,14 +7,20 @@
       <div class="col-md-6">
         <div class="form-group mt10">  
           <label for="username" class="lab">Username</label>
-          <input type="text" class="form-control inp" id="username" aria-describedby="emailHelp">
+          <input type="text" class="form-control inp" id="username" aria-describedby="emailHelp" 
+          required
+          [(ngModel)]="user.username"
+          name="username">
         </div>
       </div>
       
       <div class="col-md-6">
         <div class="form-group mt10">  
           <label for="exampleInputPassword1" class="lab">Password</label>
-          <input type="password" class="form-control inp" id="exampleInputPassword1">
+          <input type="password" class="form-control inp" id="exampleInputPassword1"
+          required
+          [(ngModel)]="user.password"
+          name="password">
           <small id="passwordHelp" class="form-text text-muted lab">password contains at least 8 characters.</small>
 
         </div>
@@ -23,24 +29,38 @@
  <div class="row">
     <div class="form-group marg col-md-6">
       <label for="firstName" class="lab">First Name</label>
-      <input type="text" class="form-control inp" id="firstName">
+      <input type="text" class="form-control inp" id="firstName"
+      required
+      [(ngModel)]="user.firstName"
+      name="firstName">
     </div>
 
     <div class="form-group marg col-md-6">
       <label for="lastName" class="lab">Last Name</label>
-      <input type="text" class="form-control inp" id="lastName">
+      <input type="text" class="form-control inp" id="lastName"
+      required
+      [(ngModel)]="user.lastName"
+      name="lastName"
+      >
     </div>
   </div>
   <div class="row">
     <div class="form-group marg col-md-6">
       <label for="email" class="lab">Email</label>
-      <input type="email" class="form-control inp" id="email">
+      <input type="email" class="form-control inp" id="email"
+      required
+      [(ngModel)]="user.email"
+      name="email">
       <small id="emailHelp" class="form-text text-muted lab">We'll never share your email with anyone else.</small>
     </div>
 
     <div class="form-group marg col-md-6">
       <label for="phone" class="lab">Phone</label>
-      <input type="text" class="form-control inp" id="phone">
+      <input type="text" class="form-control inp" id="phone"
+      required
+      [(ngModel)]="user.phone"
+      name="phone"
+      >
     </div>
   </div>
     <div class="btns">

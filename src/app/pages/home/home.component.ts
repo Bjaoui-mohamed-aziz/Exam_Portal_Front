@@ -13,7 +13,7 @@ export class HomeComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(MyModalComponent, {
+    const dialogRef = this.dialog.open(SignupModalComponent, {
       width: '500px',
       data: { name: 'Angular Modal' },
 
