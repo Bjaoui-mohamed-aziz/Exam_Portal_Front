@@ -1,0 +1,4 @@
+<div [@modalAnimation]="currentModal">
+  <app-my-modal *ngIf="currentModal === 'login'" (toggle)="toggleModal()"></app-my-modal>
+  <app-signup-modal *ngIf="currentModal === 'signup'" (toggle)="toggleModal()"></app-signup-modal>
+</div>

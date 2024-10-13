@@ -42,6 +42,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
+import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
     InstructionsComponent,
     StartComponent,
     MyModalComponent,
-    SignupModalComponent
+    SignupModalComponent,
+    AuthModalComponent
     
   ],
   imports: [

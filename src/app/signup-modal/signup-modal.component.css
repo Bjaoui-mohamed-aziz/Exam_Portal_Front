@@ -2,7 +2,7 @@ form{
  
     padding: 40px;
     border-radius: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffff;
 }
 
 .close-btn {
@@ -110,6 +110,9 @@ form{
     font-weight: 400;
     margin-bottom: 3px;
     
+}
+.mm{
+    margin-top: 10px;
 }
 .inp{
     width: 270px;

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MyModalComponent } from '../../login-modal/login-modal.component';
-import { SignupComponent } from '../signup/signup.component';
-import { SignupModalComponent } from 'src/app/signup-modal/signup-modal.component';
+import { AuthModalComponent } from 'src/app/auth-modal/auth-modal.component'; // Adjust the path accordingly
 
 @Component({
   selector: 'app-home',
@@ -13,13 +11,13 @@ export class HomeComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SignupModalComponent, {
+    const dialogRef = this.dialog.open(AuthModalComponent, {
       width: '500px',
       data: { name: 'Angular Modal' },
-
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-  }}
+  }
+}

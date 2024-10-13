@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,11 +10,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup-modal.component.css']
 })
 export class SignupModalComponent {
+  @Output() toggle = new EventEmitter<void>(); // Event emitter
 
+  // Call this method when user clicks "Login here"
+  onLoginClick() {
+    this.toggle.emit();
+  }
 
 constructor(private userService:UserService,private _snack:MatSnackBar,public dialogRef: MatDialogRef<SignupModalComponent>){
 
-  dialogRef.updateSize('800px', '585px'); 
+  
+  dialogRef.updateSize('800px', '600px'); 
 
 }
 close(): void {

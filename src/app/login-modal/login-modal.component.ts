@@ -1,5 +1,5 @@
 import { MatDialogRef } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
@@ -10,6 +10,12 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login-modal.component.css']
 })
 export class MyModalComponent implements OnInit {
+
+  @Output() toggle = new EventEmitter<void>();
+
+  onRegisterClick() {
+    this.toggle.emit();
+  }
 
   constructor(private snack: MatSnackBar, private login:LoginService, private router:Router,public dialogRef: MatDialogRef<MyModalComponent> ) {
   dialogRef.updateSize('400px', '500px'); 
