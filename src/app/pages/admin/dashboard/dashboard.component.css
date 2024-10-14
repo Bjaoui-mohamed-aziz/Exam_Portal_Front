@@ -1,0 +1,24 @@
+/* When sidebar is collapsed on small screens */
+.body-trimmed {
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* When sidebar is collapsed on larger screens */
+  .body-md-screen {
+    margin-left: 240px; /* Adjust this width according to your sidebar's collapsed size */
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Default expanded state */
+  .body-expanded {
+    margin-left: 47px; /* Adjust this width to match your sidebar's full width */
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Any additional body styles */
+  .body {
+    padding: 20px;
+    width: 100%;
+  }
+  

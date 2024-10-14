@@ -1,58 +1,24 @@
 <mat-toolbar class="custom-bg-color">
-    <a 
-    [routerLink]="'/home'"
+  <a [routerLink]="'/home'">
+    <img src="../../../assets/quizz.png" class="six mt10 mb10" />
+  </a>
+  <span class="custom-text-color ml10 lead">QUEEZ</span>
+  <span class="espace"></span>
+
+  <i
+    class="fa-solid fa-user ml20 mr10 "
+    style="color: rgb(219, 219, 219)"
+    *ngIf="isLoggedIn"
   >
-     
-     
-     
-          <img src="../../../assets/quizz.png" class="six mt10 ml10 mb10"> 
-    </a>
-   <span class="custom-text-color ml10 lead">QUEEZ</span>
-   <span class="espace"></span>
-   
-   <a
-   *ngIf="!isLoggedIn"
-   [routerLink]="'/login'"
-   mat-icon-button 
-   style="margin-right: 30px;"
-   class="example-icon favorite-icon custom-text-color text-uppercase lead" 
-   aria-label="Example icon-button with heart icon">
-    Login
-</a>
+  {{ user.username }}
 
-
-<a
-*ngIf="!isLoggedIn"
-[routerLink]="'/signup'"
-mat-icon-button 
-style="margin-right: 100px;"
-class="example-icon favorite-icon custom-text-color text-uppercase lead" 
-aria-label="Example icon-button with heart icon">
-| register 
-</a>
-
-
-<a
-(click)="logout()"
-
-*ngIf="isLoggedIn"
- mat-icon-button 
-class="example-icon favorite-icon mr20 ml20 custom-text-color text-uppercase" 
-aria-label="Example icon-button with heart icon">
- 
-logout
-</a>
-
-<button
-*ngIf="login.isLoggedIn && user"
- mat-icon-button 
-class="example-icon favorite-icon mr20 ml20  custom-text-color" 
-aria-label="Example icon-button with heart icon">
- 
-{{  user.username  }}
-</button> 
-
- </mat-toolbar>
-
-
-
+  </i>
+  <i
+    class="fa-solid fa-right-from-bracket ml20 mr10 custom-text-color"
+    style="color: aliceblue"
+    *ngIf="isLoggedIn"
+    (click)="logout()"
+  >
+    logout
+  </i>
+</mat-toolbar>

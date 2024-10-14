@@ -7,6 +7,11 @@
   box-shadow: initial 0 0 0 1000px rgb(0, 0, 0);
 }
 
+
+body { background-color: #A793F0; 
+  margin: 0; 
+  overflow: hidden;
+}
 .custom-text-color {
   color: white;
 }
@@ -14,4 +19,13 @@
 .six {
   width: 45px;
   height: 45px;
+}
+
+.title{
+  color:white;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px; 
+  margin-left: 40px;  
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

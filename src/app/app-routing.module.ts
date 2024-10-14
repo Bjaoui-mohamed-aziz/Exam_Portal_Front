@@ -39,6 +39,7 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent,
+        pathMatch: 'full'
    
       },
       {

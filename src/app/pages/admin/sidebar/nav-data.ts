@@ -7,32 +7,32 @@ export const navbarData = [
     },
     {
         RouteLink: '/admin/profile',
-        icon: 'fas fa-home',
+        icon: 'fa-solid fa-user',
         label: 'Profile',
     },
     {
         RouteLink: '/admin/categories',
-        icon: 'fas fa-home',
+        icon: 'fa-solid fa-list',
         label: 'Categories',
     },
     {
         RouteLink: '/admin/add-category',
-        icon: 'fas fa-home',
+        icon: 'fas fa-plus',
         label: 'Add Categories',
     },
     {
         RouteLink: '/admin/quizzes',
-        icon: 'fas fa-home',
+        icon: 'fa-solid fa-circle-question',
         label: 'Quizzes',
     },
     {
         RouteLink: '/admin/add-quiz',
-        icon: 'fas fa-home',
+        icon: 'fas fa-plus',
         label: 'Add Quiz',
     },
     {
-        RouteLink: '/admin/profile',
-        icon: 'fas fa-home',
+        RouteLink: '',
+        icon: 'fa-solid fa-right-from-bracket',
         label: 'Logout',
     },
 
