@@ -29,3 +29,8 @@ body { background-color: #A793F0;
   margin-left: 40px;  
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.log-text{
+  text-decoration: none;
+  cursor: pointer;
+}

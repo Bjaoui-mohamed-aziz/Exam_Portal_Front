@@ -11,12 +11,16 @@ body{
 
 }
 
+.par{
+    margin-left: 40px;
+}
+
 .title{
     color:white;
     font-size: 30px;
     font-weight: 500;
     margin-top: 20px; 
-    margin-left: 40px;  
+    margin-left: 45px;  
 }
 
 
