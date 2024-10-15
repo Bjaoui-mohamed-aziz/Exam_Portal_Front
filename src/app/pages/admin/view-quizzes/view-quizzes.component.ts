@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import baseUrl from 'src/app/services/helper';
 
 @Component({
   selector: 'app-view-quizzes',
@@ -9,45 +12,64 @@ import Swal from 'sweetalert2';
 })
 export class ViewQuizzesComponent implements OnInit {
 
-quizzes=[];
+  quizzes = [];
+  questionCounts: { [key: string]: number } = {}; // To hold question counts by quiz ID
 
-
-  constructor(private _quiz:QuizService){}
+  constructor(private _quiz: QuizService, private _http: HttpClient) {}
 
   ngOnInit(): void {
-      this._quiz.quizzes().subscribe(
-        (data:any)=>{
-          this.quizzes=data;
-          console.log(this.quizzes);
-        },
-        (error)=>{
-          console.log(error);
-          Swal.fire('Error!', 'Error in loading data !','error')
-        }
-      );
+    this._quiz.quizzes().subscribe(
+      (data: any) => {
+        this.quizzes = data;
+        console.log(this.quizzes);
+
+        // Get question count for each quiz
+        this.quizzes.forEach(quiz => {
+          this.getQuestionCount(quiz.qID).subscribe(count => {
+            this.questionCounts[quiz.qID] = count; // Store the count by quiz ID
+          });
+        });
+      },
+      (error) => {
+        console.log(error);
+        Swal.fire('Error!', 'Error in loading data!', 'error');
+      }
+    );
   }
 
-  deleteQuiz(qID){
-
-  Swal.fire({
-    icon: 'info',
-    title: 'Are you sure ?',
-    confirmButtonText: 'Delete',
-    showCancelButton:true,
-  }).then((result)=>{
-    if (result.isConfirmed){
-
-      this._quiz.deleteQuiz(qID).subscribe(
-        (data)=> {
-          this.quizzes = this.quizzes.filter((quiz)=> quiz.qID != qID);
-          Swal.fire('Success','Quiz deleted','success');
-        },(error)=>{
-          Swal.fire('Error','Error in deleting quiz','error')
+  getQuestionCount(qid: string): Observable<number> {
+    return new Observable<number>(observer => {
+      this._http.get<any>(`${baseUrl}/question/quiz/all/${qid}`).subscribe(
+        (response) => {
+          const questionCount = response.length; // Count the questions
+          observer.next(questionCount); // Emit the count
+          observer.complete(); // Complete the observable
+        },
+        (error) => {
+          observer.error(error); // Emit an error if the request fails
         }
-       );
-    }
-  })
+      );
+    });
+  }
 
-
+  deleteQuiz(qID) {
+    Swal.fire({
+      icon: 'info',
+      title: 'Are you sure?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._quiz.deleteQuiz(qID).subscribe(
+          (data) => {
+            this.quizzes = this.quizzes.filter((quiz) => quiz.qID != qID);
+            Swal.fire('Success', 'Quiz deleted', 'success');
+          },
+          (error) => {
+            Swal.fire('Error', 'Error in deleting quiz', 'error');
+          }
+        );
+      }
+    });
   }
 }

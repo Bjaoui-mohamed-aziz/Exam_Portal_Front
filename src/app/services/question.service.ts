@@ -22,6 +22,7 @@ export class QuestionService {
     return this._http.get(`${baseUrl}/question/quiz/all/${qid}`)
   }
 
+
   public addQuestion(question)
   {
     return this._http.post(`${baseUrl}/question/`,question)
