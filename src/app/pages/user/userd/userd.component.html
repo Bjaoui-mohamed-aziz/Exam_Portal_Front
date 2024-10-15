@@ -1,13 +1,15 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <app-sidebaruser></app-sidebaruser>  
-              </div>
-                <div class="col-md-10">
-                    <router-outlet></router-outlet>  
-                </div>
-            
-          
+      <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-2">
+          <app-sidebaruser (onToggleSideNav)="onToggleSideNav($event)"></app-sidebaruser>
+        </div>
+        <!-- Main Body Column -->
+        <div class="col-md-10 body" [ngClass]="getBodyClass()">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

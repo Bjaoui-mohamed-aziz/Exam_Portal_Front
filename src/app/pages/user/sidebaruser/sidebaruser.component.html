@@ -1,16 +1,52 @@
-<mat-card class="left" flex="20">
-    <mat-action-list>
-    
-    <div mat-subheader>Available Categories</div>
-    <button mat-list-item routerLink="/userd/0" mat-List-item>
-        <mat-icon mat-list-icon>home</mat-icon> Home</button>
-<button mat-list-item>
-        <mat-icon mat-list-icon>quiz</mat-icon> All Quizzes    
-    </button>
-    <button 
-   [routerLink]="'/userd/' + c.cid" mat-list-item *ngFor="let c of categories">
-        <mat-icon mat-list-icon>quiz</mat-icon> {{ c.title }}    
-    </button>
-
-    </mat-action-list>
-    </mat-card>
+ <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+        <div class="logo-container">
+          <button class="logo">
+            <i
+              class="fa-solid fa-arrow-right close-icon"
+              style="color: #fff"
+              (click)="toggleCollapse()"
+            ></i>
+            
+          </button>
+          <div class="logo-text" *ngIf="collapsed">QUEEZ</div>
+          <button class="btn-close" *ngIf="collapsed">
+            <i
+              class="fas fa-times close-icon"
+              style="color: white"
+              (click)="toggleCollapse()"
+            ></i>
+          </button>
+        </div>
+        <ul class="sidenav-nav">
+          <li class="sidenav-nav-item" *ngFor="let data of navData" >
+            <a
+              class="sidenav-nav-link"
+              [routerLink]="[data.RouteLink]"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="sidenav-link-icon ml10" [class]="data.icon"></i>
+              <span class="sidenav-link-text" *ngIf="collapsed">{{
+                data.label
+              }}</span>
+            </a>
+        
+          </li>
+          <li class="sidenav-nav-item" *ngFor="let c of categories" >
+            <a
+              class="sidenav-nav-link"
+                [routerLink]="'/userd/' + c.cid" 
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="sidenav-link-icon ml10 fa-solid fa-circle-question"></i>
+              <span class="sidenav-link-text" *ngIf="collapsed">{{
+                c.title
+              
+              }}</span>
+            </a>
+        
+          </li>
+        </ul>
+      </div>
+      
