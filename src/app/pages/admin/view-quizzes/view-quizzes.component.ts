@@ -13,7 +13,7 @@ import baseUrl from 'src/app/services/helper';
 export class ViewQuizzesComponent implements OnInit {
 
   quizzes = [];
-  questionCounts: { [key: string]: number } = {}; // To hold question counts by quiz ID
+  questionCounts: { [key: string]: number } = {};
 
   constructor(private _quiz: QuizService, private _http: HttpClient) {}
 
@@ -23,10 +23,9 @@ export class ViewQuizzesComponent implements OnInit {
         this.quizzes = data;
         console.log(this.quizzes);
 
-        // Get question count for each quiz
         this.quizzes.forEach(quiz => {
           this.getQuestionCount(quiz.qID).subscribe(count => {
-            this.questionCounts[quiz.qID] = count; // Store the count by quiz ID
+            this.questionCounts[quiz.qID] = count;
           });
         });
       },

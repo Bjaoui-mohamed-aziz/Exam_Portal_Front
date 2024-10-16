@@ -16,7 +16,7 @@
 
 /* Default expanded state */
 .body-expanded {
-  margin-left: 47px; /* Adjust this width to match your sidebar's full width */
+  margin-left: 60px; /* Adjust this width to match your sidebar's full width */
   transition: margin-left 0.3s ease;
   overflow-y: auto; /* Allow vertical scrolling */
   height: 100vh;

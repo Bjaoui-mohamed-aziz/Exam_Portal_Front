@@ -14,7 +14,7 @@ export class ViewQuizQuestionsComponent implements OnInit{
   qID;
   qTitle;
   questions = [];
-
+  quesId : number;
 
 
   constructor(
@@ -26,6 +26,8 @@ export class ViewQuizQuestionsComponent implements OnInit{
   ngOnInit(): void {
       this.qID = this._route.snapshot.params['qid'];
       this.qTitle = this._route.snapshot.params['title'];
+      this.quesId = this._route.snapshot.params['quesId'];
+
       this._question.getQuestionsOfQuiz(this.qID).subscribe(
         (data:any)=> {
        console.log(data)

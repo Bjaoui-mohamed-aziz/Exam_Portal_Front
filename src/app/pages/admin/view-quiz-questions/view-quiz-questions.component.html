@@ -39,7 +39,8 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-stroked-button color="warn" (click)="deleteQuestion(q.quesId)">Delete</button>
-                    <button mat-stroked-button color="primary">Update</button>
+<button mat-stroked-button color="primary" 
+        [routerLink]="'/admin/update-question/' + qID + '/' + qTitle + '/' + q.quesId">Update</button>
 
                 </mat-card-actions>
             </mat-card>
