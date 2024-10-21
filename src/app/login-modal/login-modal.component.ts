@@ -64,7 +64,7 @@ close(): void {
       this.login.getCurrentUser().subscribe(
         (user:any)=>{
          this.login.setUser(user);
-          console.log(user);
+          console.log(user.id);
   
           if(this.login.getUserRole()=='ADMIN')
           {

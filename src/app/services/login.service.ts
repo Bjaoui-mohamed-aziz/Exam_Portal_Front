@@ -16,6 +16,8 @@ export class LoginService  {
     return this.http.get(`${baseUrl}/current-user`);
   }
 
+  
+
 
   public generateToken(loginData: any)
 
@@ -29,6 +31,8 @@ public loginUser(token: any)
   
     return true;
 }
+
+
 public isLoggedIn()
 {
   let tokenStr = localStorage.getItem('token');

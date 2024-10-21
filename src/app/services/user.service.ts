@@ -7,11 +7,18 @@ import baseUrl from './helper';
 })
 
 export class UserService {
+  private currentUser: any; // Store the current user object
+
+
 
   constructor(private http: HttpClient ) { }
+
+
 
   public addUser(user:any)
   {
    return this.http.post(`${baseUrl}/user/`, user);
   }
-} 
+
+
+}
