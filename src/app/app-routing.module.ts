@@ -17,6 +17,7 @@ import { AdminGuard } from './services/admin.guard';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 
 
 const routes: Routes = [
@@ -70,7 +71,12 @@ const routes: Routes = [
       {
         path:'add-question/:qid/:title',
         component:AddQuestionComponent
-      }
+      },
+      {
+        path: 'update-question/:qid/:title/:questionId',
+        component: UpdateQuestionComponent 
+    }
+    
     ]
   },
   {

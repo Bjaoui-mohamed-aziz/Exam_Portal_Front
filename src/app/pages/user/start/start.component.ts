@@ -104,20 +104,29 @@ getFormattedTime()
   return `${mm} min : ${ss} sec`;
 }
 
-evalQuiz()
-{
-  this._question.evalQuiz(this.questions).subscribe(
-    (data: any)=>{
+evalQuiz() {
+  // i want to pass the user Id not manually
+  const userId = localStorage
+  this._question.evalQuiz(this.questions, userId).subscribe(
+    (data: any) => {
       console.log(data);
-      this.marksGot= parseFloat(Number(data.marksGot).toFixed(2));
+      this.marksGot = parseFloat(Number(data.marksGot).toFixed(2));
       this.correctAnswers = data.correctAnswers;
       this.attempted = data.attempted;
       this.isSubmit = true;
+
+      // Assuming data.testResultId is returned from the backend
+      if (data.testResultId) {
+        console.log('Test Result ID:', data.testResultId);
+      }
     },
-    (error)=>{
-      console.log(error)
+    (error) => {
+      console.log(error);
+      Swal.fire('Error', 'An error occurred while evaluating the quiz', 'error');
     }
-  )
+  );
+
+
 
   /*this.isSubmit= true;
   
@@ -150,7 +159,6 @@ evalQuiz()
     */
 }
 printPage(){
-  window.print();
-}
+ window.print();}
 };
 

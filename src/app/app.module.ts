@@ -43,6 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
     StartComponent,
     MyModalComponent,
     SignupModalComponent,
-    AuthModalComponent
+    AuthModalComponent,
+    UpdateQuestionComponent
     
   ],
   imports: [

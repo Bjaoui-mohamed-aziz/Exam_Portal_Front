@@ -6,6 +6,10 @@
 
 }
 
+h1{
+  margin: 40px;
+}
+
 .table{
   width: 100%;  
   border-collapse: collapse; 
