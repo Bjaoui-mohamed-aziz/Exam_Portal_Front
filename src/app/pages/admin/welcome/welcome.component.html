@@ -1,20 +1,20 @@
 
 <div class="cont">
-<mat-card style="margin: 1%;" class="mt10">
+<mat-card style="margin: 1%;" class="mt10" *ngFor="let r of results">
 
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>title</mat-card-title>
-        <mat-card-subtitle> category</mat-card-subtitle>
+        <mat-card-title>{{r.username}}</mat-card-title>
+        <mat-card-subtitle> student</mat-card-subtitle>
     </mat-card-header>
 <mat-card-content>
 </mat-card-content>
 <mat-card-actions>
-<button mat-flat-button color="primary">Questions</button>
+<button mat-flat-button color="primary">Marks Got : {{r.marksGot}}</button>
 
 <button 
-mat-flat-button color="primary" class="ml10" >Update</button>
-<button mat-flat-button color="primary" class="ml10">Attempts</button>
+mat-flat-button color="primary" class="ml10" >Correct Answers : {{r.correctAnswers}}</button>
+<button mat-flat-button color="primary" class="ml10">Attempts : {{r.attempted}}</button>
 </mat-card-actions>
 </mat-card>
 
