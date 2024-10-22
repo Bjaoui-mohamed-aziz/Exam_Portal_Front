@@ -1,0 +1,12 @@
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.example-header-image {
+    background-image: url("../../../../assets/employe.png");
+    border: 0.5px solid black;
+    padding: 10px;
+    background-size: cover;
+}

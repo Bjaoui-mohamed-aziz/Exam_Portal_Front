@@ -40,12 +40,12 @@ export class ViewQuizzesComponent implements OnInit {
     return new Observable<number>(observer => {
       this._http.get<any>(`${baseUrl}/question/quiz/all/${qid}`).subscribe(
         (response) => {
-          const questionCount = response.length; // Count the questions
-          observer.next(questionCount); // Emit the count
-          observer.complete(); // Complete the observable
+          const questionCount = response.length;
+          observer.next(questionCount);
+          observer.complete();
         },
         (error) => {
-          observer.error(error); // Emit an error if the request fails
+          observer.error(error);
         }
       );
     });

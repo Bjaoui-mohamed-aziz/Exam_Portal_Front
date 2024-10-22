@@ -60,4 +60,9 @@ export class QuestionService {
     const url = `http://localhost:8080/question/eval-quiz?userId=${userId}`;
     return this._http.post(url, requestBody);
   }
+
+  public getResponseOfUser(resultId: number) {
+    const url = `http://localhost:8080/question/result/${resultId}`;
+    return this._http.get(url);
+  }
 }

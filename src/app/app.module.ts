@@ -44,6 +44,7 @@ import { MyModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { ViewResultsComponent } from './pages/admin/view-results/view-results.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     MyModalComponent,
     SignupModalComponent,
     AuthModalComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    ViewResultsComponent
     
   ],
   imports: [
