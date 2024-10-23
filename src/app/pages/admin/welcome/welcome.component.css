@@ -1,6 +1,7 @@
 .cont{
     display: flex;
-    align-items: center;
+    align-items:center;
+    flex-wrap: wrap;
     justify-content: flex-start;
 }
 
@@ -10,3 +11,16 @@
     padding: 10px;
     background-size: cover;
 }
+
+.btn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+
+}
+
+.pp{
+    size: 20px;
+}
+

@@ -14,7 +14,11 @@ export class ResultService {
 
   public GetResult()
   {
-    return this._http.get(`${baseUrl}/question/results`)
+    return this._http.get(`http://localhost:8080/question/results`)
+  }
+
+  public deleteResult(id) {
+    return this._http.delete(`${baseUrl}/question/result/${id}`);
   }
 
 }

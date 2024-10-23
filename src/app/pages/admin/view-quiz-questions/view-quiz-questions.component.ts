@@ -38,7 +38,7 @@ export class ViewQuizQuestionsComponent implements OnInit{
     }
   
   //delete question
-  deleteQuestion(qid)
+  deleteQuestion(qid,index : number)
   {
     Swal.fire({
       icon:'info',
@@ -53,6 +53,7 @@ export class ViewQuizQuestionsComponent implements OnInit{
           (data)=>{
            this._snack.open('Question Deleted','',{duration:3000,});
            this.questions = this.questions.filter((q)=>q.quesId==qid)
+           this.questions.splice(index,1);
           },
           (error)=>{
             this._snack.open('Error in deleting questions','',{duration:3000});
