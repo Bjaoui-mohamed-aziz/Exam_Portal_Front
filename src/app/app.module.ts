@@ -11,12 +11,14 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar'
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';  // Import this
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from "@angular/material/icon";
 import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';  // Import this
 import { UserdComponent } from './pages/user/userd/userd.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {MatListModule} from '@angular/material/list';
@@ -92,8 +94,10 @@ import { ViewResultsComponent } from './pages/admin/view-results/view-results.co
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
+    ReactiveFormsModule, 
     MatSelectModule,
     CKEditorModule,
+    MatAutocompleteModule,
     MatProgressSpinnerModule,  
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({

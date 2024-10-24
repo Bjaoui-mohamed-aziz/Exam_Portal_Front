@@ -1,5 +1,16 @@
-
+<div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search Users" [formControl]="searchControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayUser">
+      <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
+        {{ user.username }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+</div>
 <div class="cont">
+
 <mat-card style="margin: 1%;" class="mt10" *ngFor="let r of results; let i = index">
 
     <mat-card-header>

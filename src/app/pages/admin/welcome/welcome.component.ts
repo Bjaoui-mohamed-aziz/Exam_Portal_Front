@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { startWith, debounceTime, switchMap } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { ResultService } from 'src/app/services/result.service';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 
@@ -12,16 +16,20 @@ import Swal from 'sweetalert2';
 })
 export class WelcomeComponent implements OnInit{
 
+  searchControl = new FormControl();
+  filteredUsers!: Observable<any[]>;
+
   results = [];
 
 
-  constructor(private _http: HttpClient, private _results : ResultService,
-  ) {}
+  constructor(private _http: HttpClient, private _results : ResultService,private userService: UserService
+  ) {}1
 
 
   ngOnInit(): void {
 
 
+    
     this._results.GetResult().subscribe(
       (data: any) => {
         this.results = data;
@@ -32,10 +40,18 @@ export class WelcomeComponent implements OnInit{
       }
     );
 
-
+    this.filteredUsers = this.searchControl.valueChanges.pipe(
+      startWith(''),
+      debounceTime(300), // Delay API calls to avoid flooding the server
+      switchMap(value => this.userService.searchUsersByUsername(value))
+    );
     
   }
 
+
+  displayUser(user: any): string {
+    return user ? user.username : '';
+  }
 
   deleteResult(id, index: number) {
     Swal.fire({
