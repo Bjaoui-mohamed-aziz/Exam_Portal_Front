@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { provideToastr, ToastrModule } from 'ngx-toastr';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar'
@@ -89,6 +90,11 @@ import { ViewResultsComponent } from './pages/admin/view-results/view-results.co
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    ToastrModule.forRoot(
+      {timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,}
+    ),
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
@@ -105,7 +111,8 @@ import { ViewResultsComponent } from './pages/admin/view-results/view-results.co
       
     })
   ],
-  providers: [authInterceptorProviders],
-  bootstrap: [AppComponent]
+  providers: [authInterceptorProviders, provideToastr()
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

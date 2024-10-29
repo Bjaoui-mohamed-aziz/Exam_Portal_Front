@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
@@ -14,7 +15,8 @@ export class UpdateQuizComponent implements OnInit {
   constructor(private _route: ActivatedRoute, 
               private _quiz:QuizService,
               private _cat:CategoryService,  
-              private _router:Router){}
+              private _router:Router,
+              private toastr: ToastrService){}
 
   qID = 0;
   quiz;
@@ -47,12 +49,11 @@ public updateData(){
 
 this._quiz.updateQuiz(this.quiz).subscribe(
   (data)=> {
-  Swal.fire('Succcess !!', 'quiz updated', 'success').then((e)=>{
-  this._router.navigate(['/admin/quizzes'])
-});
+    this.toastr.success('Quiz added successfully!', 'Success');
+    this._router.navigate(['/admin/quizzes'])
 }, (error)=>{
-  Swal.fire('error!!', 'Error while Updating quiz','error');
-        console.log(error)
+    this.toastr.error('Error while updating quiz!', 'Error');
+    console.log(error)
 });
 }
 }

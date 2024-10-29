@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cat_title{
+    font-weight: 500;
+    margin-left: 10px;
+    text-transform: uppercase;
+
+    
+}
+
+.dd{
+    display: flex;
+    align-items: center;
+    
+}
+
+.btn-custom {
+    background-color: #5a67d8; /* Couleur de fond personnalisée */
+    color: #ffffff; /* Couleur du texte */
+    border: 2px solid #434190; /* Bordure personnalisée */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 16px; /* Taille du texte */
+    padding: 10px 20px; /* Espacement interne */
+    transition: all 0.3s ease; /* Transition pour effet d'animation */
+}
+
+.btn-custom:hover {
+    background-color: #434190; /* Couleur de fond au survol */
+    color: #e9d8fd; /* Couleur du texte au survol */
+    border-color: #5a67d8; /* Bordure au survol */
+}
+
+.title{
+    font-weight: 500;
+    margin-left: 10px;
+    text-transform: uppercase;
+}

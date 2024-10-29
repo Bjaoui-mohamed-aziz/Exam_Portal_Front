@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-question',
@@ -26,7 +27,9 @@ export class UpdateQuestionComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _question: QuestionService
+    private _question: QuestionService,
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -73,7 +76,8 @@ export class UpdateQuestionComponent implements OnInit {
     // Update question instead of adding a new one
     this._question.updateQuestion(this.questionId, this.question).subscribe(
       (data: any) => {
-        Swal.fire('Success', 'Question Updated', 'success');
+        this.toastr.success('question updated successfully!', 'Success');
+        this.router.navigate(['/admin/quizzes']);
       },
       (error) => {
         Swal.fire('Error', 'Error in updating question', 'error');

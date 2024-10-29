@@ -46,7 +46,7 @@ export class QuestionService {
   }
 
   public updateQuestion(questionId, question) {
-    return this._http.put(`${baseUrl}/question/${questionId}`, question);
+    return this._http.put(`${baseUrl}/question/`, question);
   }
   
   public deleteQuestion(questionId)

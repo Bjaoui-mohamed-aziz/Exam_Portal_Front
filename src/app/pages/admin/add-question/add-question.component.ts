@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-question',
@@ -26,7 +27,10 @@ export class AddQuestionComponent implements OnInit {
 
 
   constructor(private _route:ActivatedRoute,
-              private _question:QuestionService){}
+              private _question:QuestionService,
+              private toastr: ToastrService,
+              private router: Router
+            ){}
 
   ngOnInit(): void {
     this.qId= this._route.snapshot.params['qid'];
@@ -50,8 +54,8 @@ if(this.question.option2.trim()=='' || this.question.option2 == null)
 }
 
 this._question.addQuestion(this.question).subscribe((data:any) =>{
-  Swal.fire('Success','Question Added, Add another one','success');
-  this.question.content=''
+  this.toastr.success('Question added successfully!', 'Success');
+  this.router.navigate(['/admin/quizzes']);  this.question.content=''
   this.question.option1=''
   this.question.option2=''
   this.question.option3=''
@@ -60,7 +64,7 @@ this._question.addQuestion(this.question).subscribe((data:any) =>{
 
 },
 (error) =>{
-  Swal.fire('Error','Error in adding question','error')
+  this.toastr.error('Something wrong!', 'Error');
 })
   }
 }

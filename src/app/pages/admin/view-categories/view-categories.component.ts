@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 export class ViewCategoriesComponent implements OnInit{
 
 categories= [];
-constructor(private _category:CategoryService){}
+constructor(private _category:CategoryService,private toastr : ToastrService){}
 
 ngOnInit(): void {
   this._category.categories().subscribe((data:any)=> {
@@ -20,7 +21,8 @@ ngOnInit(): void {
   (error)=>{
     //
     console.log(error);
-    Swal.fire('Error !!','Error in loading data','error',);
+    this.toastr.success('Quiz added successfully!', 'Success');
+
   })
     
 }

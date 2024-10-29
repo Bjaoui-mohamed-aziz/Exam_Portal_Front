@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import baseUrl from 'src/app/services/helper';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-view-quizzes',
@@ -15,7 +16,7 @@ export class ViewQuizzesComponent implements OnInit {
   quizzes = [];
   questionCounts: { [key: string]: number } = {};
 
-  constructor(private _quiz: QuizService, private _http: HttpClient) {}
+  constructor(private _quiz: QuizService, private _http: HttpClient, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this._quiz.quizzes().subscribe(
@@ -53,7 +54,7 @@ export class ViewQuizzesComponent implements OnInit {
 
   deleteQuiz(qID) {
     Swal.fire({
-      icon: 'info',
+      icon: 'error',
       title: 'Are you sure?',
       confirmButtonText: 'Delete',
       showCancelButton: true,
@@ -62,10 +63,11 @@ export class ViewQuizzesComponent implements OnInit {
         this._quiz.deleteQuiz(qID).subscribe(
           (data) => {
             this.quizzes = this.quizzes.filter((quiz) => quiz.qID != qID);
-            Swal.fire('Success', 'Quiz deleted', 'success');
+            this.toastr.success('Quiz added successfully!', 'Success');
+
           },
           (error) => {
-            Swal.fire('Error', 'Error in deleting quiz', 'error');
+            this.toastr.success('Error in deleting quiz !', 'Error');
           }
         );
       }
