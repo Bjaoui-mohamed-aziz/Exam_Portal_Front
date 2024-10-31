@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup-modal',
@@ -17,7 +18,9 @@ export class SignupModalComponent {
     this.toggle.emit();
   }
 
-constructor(private userService:UserService,private _snack:MatSnackBar,public dialogRef: MatDialogRef<SignupModalComponent>){
+constructor(private userService:UserService,private _snack:MatSnackBar,public dialogRef: MatDialogRef<SignupModalComponent>,
+  private toastr: ToastrService
+){
 
   
   dialogRef.updateSize('800px', '600px'); 
@@ -56,8 +59,8 @@ formSubmit() {
 
   this.userService.addUser(this.user).subscribe(
     {
-      next: (data) => Swal.
-      fire('Success','user is registered','success'),
+      next: (data) => 
+        this.toastr.success('Quiz added successfully!', 'Success'),
       error: (err) =>  this._snack.open("Something went wrong !!",'',{
       duration:3000,
       verticalPosition:'top',
